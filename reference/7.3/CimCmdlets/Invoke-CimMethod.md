@@ -1,5 +1,5 @@
 ---
-external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+eternal help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.ml
 Locale: en-US
 Module Name: CimCmdlets
 ms.date: 06/28/2023
@@ -13,7 +13,7 @@ title: Invoke-CimMethod
 ## SYNOPSIS
 Invokes a method of a CIM class.
 
-## SYNTAX
+## SYNTA
 
 ### ClassNameComputerSet (Default)
 
@@ -117,45 +117,45 @@ If the **InputObject** parameter is specified, the cmdlet works in one of the fo
   this cmdlet uses the either the **CimSession** parameter value or **ComputerName** parameter
   value. This is not a common scenario.
 
-## EXAMPLES
+## EAMPLES
 
-### Example 1: Invoke a method
+### Eample 1: Invoke a method
 
-This example invokes the **Terminate** method of the **Win32_Process** class.
+This eample invokes the **Terminate** method of the **Win32_Process** class.
 
 ```powershell
 Invoke-CimMethod -Query 'select * from Win32_Process where name like "notepad%"' -MethodName "Terminate"
 ```
 
-### Example 2: Invoke a method using CIM instance object
+### Eample 2: Invoke a method using CIM instance object
 
-This example retrieves the CIM instance object and stores it in a variable named `$x` using the
+This eample retrieves the CIM instance object and stores it in a variable named `$` using the
 `Get-CimInstance` cmdlet. The contents of the variable are then used as the **InputObject** for the
 `Invoke-CimMethod` cmdlet. The **GetOwner** method is invoked for the **CimInstance**.
 
 ```powershell
-$x = Get-CimInstance -Query 'Select * from Win32_Process where name like "notepad%"'
-Invoke-CimMethod -InputObject $x -MethodName GetOwner
+$ = Get-CimInstance -Query 'Select * from Win32_Process where name like "notepad%"'
+Invoke-CimMethod -InputObject $ -MethodName GetOwner
 ```
 
-### Example 3: Invoke a static method using arguments
+### Eample 3: Invoke a static method using arguments
 
-This example invokes the **Create** method named using the **Arguments** parameter.
+This eample invokes the **Create** method named using the **Arguments** parameter.
 
 ```powershell
 Invoke-CimMethod -ClassName Win32_Process -MethodName "Create" -Arguments @{
-  CommandLine = 'notepad.exe'; CurrentDirectory = "C:\windows\system32"
+  CommandLine = 'notepad.ee'; CurrentDirectory = "C:\windows\system32"
 }
 ```
 
-### Example 4: Client-side validation
+### Eample 4: Client-side validation
 
-This example performs client-side validation for the **xyz** method by passing a **CimClass** object
+This eample performs client-side validation for the **yz** method by passing a **CimClass** object
 to `Invoke-CimMethod`.
 
 ```powershell
 $c = Get-CimClass -ClassName Win32_Process
-Invoke-CimMethod -CimClass $c -MethodName "xyz" -Arguments @{ CommandLine = 'notepad.exe' }
+Invoke-CimMethod -CimClass $c -MethodName "yz" -Arguments @{ CommandLine = 'notepad.ee' }
 ```
 
 ## PARAMETERS
@@ -339,7 +339,7 @@ Specifies a query to run on the CIM server. A method is invoked on the instances
 result of the query. You can specify the query dialect using the **QueryDialect** parameter.
 
 If the value specified contains double quotes (`"`), single quotes (`'`), or a backslash (`\`), you
-must escape those characters by prefixing them with the backslash (`\`) character. If the value
+must escape those characters by prefiing them with the backslash (`\`) character. If the value
 specified uses the WQL LIKE operator, then you must escape the following characters by enclosing
 them in square brackets (`[]`): percent (`%`), underscore (`_`), or opening square bracket (`[`).
 
@@ -379,7 +379,7 @@ Accept wildcard characters: False
 Specifies the resource uniform resource identifier (URI) of the resource class or instance.
 The URI is used to identify a specific type of resource, such as disks or processes, on a computer.
 
-A URI consists of a prefix and a path to a resource. For example:
+A URI consists of a prefi and a path to a resource. For eample:
 
 `http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
